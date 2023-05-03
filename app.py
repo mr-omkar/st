@@ -50,11 +50,12 @@ def sel_stock():
 
     to_date = st.date_input("To Date",t_date - datetime.timedelta(days=1),t_date - datetime.timedelta(days=1),t_date - datetime.timedelta(days=1))
 
-
+    print(st_symb, from_date, to_date)
     return st_symb, from_date, to_date
 
 
 def stock_info(symb, fr_d, to_d):
+    print(symb, fr_d, to_d)
 
     symbol = symb
     start_date = fr_d
