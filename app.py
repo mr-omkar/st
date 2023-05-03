@@ -158,5 +158,5 @@ st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_
 
 
 if st.button("Get Info"):
-    print(a,b,c,d)
-       stock_info(st_symb,from_date,to_date)
+    print(st_symb,from_date,to_date)
+    stock_info(st_symb,from_date,to_date)
