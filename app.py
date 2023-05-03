@@ -34,9 +34,9 @@ inp_stock = selectbox("Select Stock",all_stocks["NAME OF COMPANY"],index=0)
 st.write(inp_stock)
 
 
-def stock_info():
+def stock_info(in_st):
 
-    res  = all_stocks[all_stocks["NAME OF COMPANY"]==inp_stock]
+    res  = all_stocks[all_stocks["NAME OF COMPANY"]==in_st]
 
     li_date = datetime.datetime.strptime(res["DATE OF LISTING"].values[0],"%d-%b-%Y")
 
@@ -147,5 +147,6 @@ def stock_info():
 
 
 
-
-st.button("Get",on_click=stock_info())
+       
+if st.button("Get Info"):
+       stock_info()
