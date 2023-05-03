@@ -37,6 +37,7 @@ st.write(inp_stock)
 def stock_info(in_st):
 
     res  = all_stocks[all_stocks["NAME OF COMPANY"]==in_st]
+    print(res)
 
     li_date = datetime.datetime.strptime(res["DATE OF LISTING"].values[0],"%d-%b-%Y")
 
