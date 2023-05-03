@@ -30,7 +30,7 @@ all_stocks.columns = ['SYMBOL', 'NAME OF COMPANY', 'SERIES', 'DATE OF LISTING',
 t_date = datetime.date.today()
 
 
-global st_symb = ""
+global st_symb
 global from_date = datetime.date
 global to_date = datetime.date
 
