@@ -33,6 +33,9 @@ t_date = datetime.date.today()
 inp_stock = selectbox("Select Stock",all_stocks["NAME OF COMPANY"],index=0)
 st.write(inp_stock)
 
+from_date = datetime.date
+to_date = datetime.date
+
 
 def stock_info(in_st):
 
