@@ -30,9 +30,9 @@ all_stocks.columns = ['SYMBOL', 'NAME OF COMPANY', 'SERIES', 'DATE OF LISTING',
 t_date = datetime.date.today()
 
 
-st_symb = ""
-from_date = datetime.date
-to_date = datetime.date
+global st_symb = ""
+global from_date = datetime.date
+global to_date = datetime.date
 
 def sel_stock():
     inp_stock = st.session_state['Stock']
@@ -153,7 +153,8 @@ def stock_info(symb, fr_d, to_d):
     st.write(final_pred)
 
 
-a, b, c, d = st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
+       
+st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
 
 
 if st.button("Get Info"):
