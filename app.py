@@ -30,7 +30,9 @@ all_stocks.columns = ['SYMBOL', 'NAME OF COMPANY', 'SERIES', 'DATE OF LISTING',
 t_date = datetime.date.today()
 
 
-global st_symb, from_date, to_date = None
+global st_symb = None
+global from_date = None
+global to_date = None
 
 def sel_stock():
     inp_stock = st.session_state['Stock']
