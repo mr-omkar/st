@@ -30,12 +30,15 @@ all_stocks.columns = ['SYMBOL', 'NAME OF COMPANY', 'SERIES', 'DATE OF LISTING',
 t_date = datetime.date.today()
 
 
-global st_symb = None
-global from_date = None
-global to_date = None
+st_symb = None
+from_date = None
+to_date = None
 
 def sel_stock():
     inp_stock = st.session_state['Stock']
+    global st_symb
+    global from_date
+    global to_date
     res  = all_stocks[all_stocks["NAME OF COMPANY"]==inp_stock]
     print(res)
     li_date = datetime.datetime.strptime(res["DATE OF LISTING"].values[0],"%d-%b-%Y")
