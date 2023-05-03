@@ -31,8 +31,8 @@ t_date = datetime.date.today()
 
 
 global st_symb
-global from_date = datetime.date
-global to_date = datetime.date
+global from_date
+global to_date
 
 def sel_stock():
     inp_stock = st.session_state['Stock']
