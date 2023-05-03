@@ -149,4 +149,4 @@ def stock_info(in_st):
 
        
 if st.button("Get Info"):
-       stock_info()
+       stock_info(inp_stock)
