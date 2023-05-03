@@ -46,7 +46,7 @@ def stock_info(in_st):
 
     st.table(res[["SYMBOL","NAME OF COMPANY","SERIES","DATE OF LISTING"]])
 
-    st_symb = st.text_input("Stock Symbol",value=res["SYMBOL"][0],disabled=True)
+    st_symb = st.text_input("Stock Symbol",value=res["SYMBOL"].values[0],disabled=True)
 
     from_date = st.date_input("From Date",li_date + datetime.timedelta(days=1),li_date + datetime.timedelta(days=1),t_date - datetime.timedelta(days=1))
 
