@@ -24,7 +24,7 @@ from tensorflow.python.keras.layers import  LSTM,Dense
 from tensorflow.python.keras.callbacks import EarlyStopping
 
 
-all_stocks = pd.read_csv("https://archives.nseindia.com/content/equities/EQUITY_L.csv")
+all_stocks = pd.read_csv("EQUITY_L.csv")
 all_stocks.columns = ['SYMBOL', 'NAME OF COMPANY', 'SERIES', 'DATE OF LISTING',
        'PAID UP VALUE', 'MARKET LOT', 'ISIN NUMBER', 'FACE VALUE']
 t_date = datetime.date.today()
