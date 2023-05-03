@@ -163,6 +163,7 @@ st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_
 def pass_val():
     print("get info clicked")
     print(st_symb,from_date,to_date)
+    st.write("clicked info")
 
 
 st.button("Get Info",on_click=pass_val)
