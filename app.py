@@ -30,28 +30,30 @@ all_stocks.columns = ['SYMBOL', 'NAME OF COMPANY', 'SERIES', 'DATE OF LISTING',
 t_date = datetime.date.today()
 
 
-inp_stock = selectbox("Select Stock",all_stocks["NAME OF COMPANY"],index=0)
-st.write(inp_stock)
-
+st_symb = ""
 from_date = datetime.date
 to_date = datetime.date
 
-
-def stock_info(in_st):
-
-    res  = all_stocks[all_stocks["NAME OF COMPANY"]==in_st]
+def sel_stock():
+    inp_stock = st.session_state['Stock']
+    res  = all_stocks[all_stocks["NAME OF COMPANY"]==inp_stock]
     print(res)
-
     li_date = datetime.datetime.strptime(res["DATE OF LISTING"].values[0],"%d-%b-%Y")
 
     st.table(res[["SYMBOL","NAME OF COMPANY","SERIES","DATE OF LISTING"]])
 
     st_symb = st.text_input("Stock Symbol",value=res["SYMBOL"].values[0],disabled=True)
-
     from_date = st.date_input("From Date",li_date + datetime.timedelta(days=1),li_date + datetime.timedelta(days=1),t_date - datetime.timedelta(days=1))
 
     to_date = st.date_input("To Date",t_date - datetime.timedelta(days=1),t_date - datetime.timedelta(days=1),t_date - datetime.timedelta(days=1))
 
+
+
+def stock_info(symb, fr_d, to_d):
+    
+    symbol = symb
+    start_date = fr_d
+    end_date = to_d
 
     dt_sclr = MinMaxScaler((0,1))
     res_sclr = MinMaxScaler((0,1))
@@ -131,7 +133,7 @@ def stock_info(in_st):
         final = res_sclr.inverse_transform(val)
         return final
 
-    dt = get_data(st_symb,from_date,to_date)
+    dt = get_data(symbol,start_date,end_date)
 
     pro_data = prepro_df(dt)
 
@@ -150,7 +152,8 @@ def stock_info(in_st):
     st.write(final_pred)
 
 
+st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
 
-       
+
 if st.button("Get Info"):
-       stock_info(inp_stock)
+       stock_info(st_symb,from_date,to_date)
