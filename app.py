@@ -165,7 +165,7 @@ def pass_val():
     print(st_symb,from_date,to_date)
 
 
-st.buttom("Get Info",on_click=pass_val)
+st.button("Get Info",on_click=pass_val)
 
 
 
