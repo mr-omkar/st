@@ -15,9 +15,9 @@ from sklearn.preprocessing import MinMaxScaler
 from jugaad_data.nse import stock_df
 from streamlit_extras.no_default_selectbox import selectbox
 
-# from keras.models import Sequential
-# from keras.layers import LSTM,Dense
-# from keras.callbacks import EarlyStopping
+from keras.models import Sequential
+from keras.layers import LSTM,Dense
+from keras.callbacks import EarlyStopping
 
 
 all_stocks = pd.read_csv("https://archives.nseindia.com/content/equities/EQUITY_L.csv")
