@@ -159,7 +159,10 @@ def stock_info(symb, fr_d, to_d):
 
 
        
-st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
+# st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
+
+a, b, c = st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
+
 # def pass_val():
 #     print("get info clicked")
 #     print(st_symb,from_date,to_date)
