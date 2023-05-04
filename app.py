@@ -49,8 +49,8 @@ def sel_stock():
     from_date = st.date_input("From Date",li_date + datetime.timedelta(days=1),li_date + datetime.timedelta(days=1),t_date - datetime.timedelta(days=1))
 
     to_date = st.date_input("To Date",t_date - datetime.timedelta(days=1),li_date + datetime.timedelta(days=7),t_date - datetime.timedelta(days=1))
-
-    print(st_symb, from_date, to_date)
+    
+    st.write(st_symb, from_date, to_date)
     return st_symb, from_date, to_date
 
 
@@ -160,13 +160,13 @@ def stock_info(symb, fr_d, to_d):
 
        
 st.write(selectbox("Stock",all_stocks["NAME OF COMPANY"],index=0,key="Stock",on_change=sel_stock))
-def pass_val():
-    print("get info clicked")
-    print(st_symb,from_date,to_date)
-    st.write("clicked info")
+# def pass_val():
+#     print("get info clicked")
+#     print(st_symb,from_date,to_date)
+#     st.write("clicked info")
 
 
-st.button("Get Info",on_click=pass_val)
+# st.button("Get Info",on_click=pass_val)
 
 
 
