@@ -48,7 +48,7 @@ def sel_stock():
     st_symb = st.text_input("Stock Symbol",value=res["SYMBOL"].values[0],disabled=True)
     from_date = st.date_input("From Date",li_date + datetime.timedelta(days=1),li_date + datetime.timedelta(days=1),t_date - datetime.timedelta(days=1))
 
-    to_date = st.date_input("To Date",t_date - datetime.timedelta(days=1,li_date + datetime.timedelta(days=7),t_date - datetime.timedelta(days=1))
+    to_date = st.date_input("To Date",t_date - datetime.timedelta(days=1),li_date + datetime.timedelta(days=7),t_date - datetime.timedelta(days=1))
 
     print(st_symb, from_date, to_date)
     return st_symb, from_date, to_date
